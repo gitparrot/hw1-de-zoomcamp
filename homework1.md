@@ -24,8 +24,8 @@ Answer:
 Question 5:
 SELECT gz."Borough" AS pickup_borough,
        SUM(gt.total_amount) AS total_amount_sum
-FROM public.green_taxi_trips gt
-JOIN public.green_taxi_zones gz ON gt."PULocationID" = gz."LocationID"
+FROM green_taxi_trips gt
+JOIN green_taxi_zones gz ON gt."PULocationID" = gz."LocationID"
 WHERE DATE(gt."lpep_pickup_datetime") = '2019-09-18'
 GROUP BY pickup_borough
 HAVING SUM(gt.total_amount) > 50000
